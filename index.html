@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Team Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Liên Minh Huyền Thoại - Chia Team</h1>
+            <p>Chia team và vị trí ngẫu nhiên cho 6-10 người chơi</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Nhập thông tin người chơi</h2>
+                <div class="player-input">
+                    <label for="playerCount">Số lượng người chơi (6-10, số chẵn):</label>
+                    <select id="playerCount">
+                        <option value="">Chọn số người</option>
+                        <option value="6">6 người</option>
+                        <option value="8">8 người</option>
+                        <option value="10">10 người</option>
+                    </select>
+                </div>
+
+                <div id="playerNames" class="player-names hidden">
+                    <h3>Nhập tên người chơi:</h3>
+                    <div id="nameInputs"></div>
+                </div>
+
+                <button id="splitTeams" class="btn-primary hidden">Chia Team</button>
+            </section>
+
+            <section id="results" class="results-section hidden">
+                <h2>Kết quả chia team</h2>
+                <div class="teams-container">
+                    <div class="team team-blue">
+                        <h3>🔵 Team Xanh</h3>
+                        <div id="team1Players"></div>
+                        <h4>Tướng có thể chọn:</h4>
+                        <div id="team1Champions" class="champions-list"></div>
+                    </div>
+                    
+                    <div class="team team-red">
+                        <h3>🔴 Team Đỏ</h3>
+                        <div id="team2Players"></div>
+                        <h4>Tướng có thể chọn:</h4>
+                        <div id="team2Champions" class="champions-list"></div>
+                    </div>
+                </div>
+                
+                <button id="resetBtn" class="btn-secondary">Chia lại</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="champions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

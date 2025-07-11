@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 9, 19, 0.9);
+    border: 2px solid #c89b3c;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c89b3c;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #f0e6d2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #c9aa71;
+}
+
+.input-section {
+    background: rgba(30, 60, 114, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #463714;
+}
+
+.input-section h2 {
+    color: #f0e6d2;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.player-input {
+    margin-bottom: 20px;
+}
+
+.player-input label {
+    display: block;
+    margin-bottom: 8px;
+    color: #c9aa71;
+    font-weight: bold;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border: 2px solid #463714;
+    border-radius: 5px;
+    background: #0f2027;
+    color: #c9aa71;
+    font-size: 1rem;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #c89b3c;
+    box-shadow: 0 0 10px rgba(200, 155, 60, 0.3);
+}
+
+.player-names {
+    margin-top: 20px;
+}
+
+.player-names h3 {
+    color: #f0e6d2;
+    margin-bottom: 15px;
+}
+
+.name-input {
+    margin-bottom: 10px;
+}
+
+.name-input label {
+    display: inline-block;
+    width: 80px;
+    margin-right: 10px;
+    color: #c9aa71;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #c89b3c, #f0e6d2);
+    color: #0f2027;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #f0e6d2, #c89b3c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 155, 60, 0.4);
+}
+
+.btn-secondary {
+    background: #463714;
+    color: #c9aa71;
+    border: 2px solid #c89b3c;
+}
+
+.btn-secondary:hover {
+    background: #c89b3c;
+    color: #0f2027;
+}
+
+.hidden {
+    display: none;
+}
+
+.results-section {
+    background: rgba(30, 60, 114, 0.2);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #463714;
+}
+
+.results-section h2 {
+    color: #f0e6d2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.team {
+    background: rgba(15, 32, 39, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.team-blue {
+    border-color: #0596aa;
+}
+
+.team-red {
+    border-color: #c8aa6e;
+}
+
+.team h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #f0e6d2;
+}
+
+.player {
+    background: rgba(70, 55, 20, 0.5);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border-left: 4px solid #c89b3c;
+}
+
+.player-name {
+    font-weight: bold;
+    color: #f0e6d2;
+}
+
+.player-role {
+    color: #c9aa71;
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.champions-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.champion {
+    background: rgba(70, 55, 20, 0.7);
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #c9aa71;
+    border: 1px solid #463714;
+    transition: all 0.2s ease;
+}
+
+.champion:hover {
+    background: rgba(200, 155, 60, 0.3);
+    color: #f0e6d2;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .teams-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .champions-list {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+    
+    select, input[type="text"] {
+        max-width: 100%;
+    }
+} 
