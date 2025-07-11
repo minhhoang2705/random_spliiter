@@ -33,11 +33,14 @@ Sau khi chạy, mở trình duyệt và truy cập: `http://localhost:3000`
 
 ## 📖 Hướng dẫn sử dụng
 
-1. **Chọn số lượng người chơi**: 6, 8, hoặc 10 người
+1. **Chọn số lượng người chơi**: 
+   - **6 người**: 3v3 (Top, Mid, ADC - không có Jungle)
+   - **8 người**: 4v4 (Top, Jungle, Mid, ADC - không có Support)  
+   - **10 người**: 5v5 (Top, Jungle, Mid, ADC, Support - đầy đủ)
 2. **Nhập tên các người chơi**: Không được trùng lặp
 3. **Nhấn "Chia Team"**: Hệ thống sẽ tự động:
    - Chia ngẫu nhiên thành 2 team
-   - Assign vị trí ngẫu nhiên cho mỗi người
+   - Assign vị trí phù hợp dựa trên số người
    - Random 10 tướng cho mỗi team
 4. **Xem kết quả**: Mỗi team sẽ có danh sách người chơi với vị trí và 10 tướng để chọn
 5. **Chia lại**: Nhấn "Chia lại" để random lại
@@ -93,11 +96,13 @@ random_splitter/
 
 ## 🎯 Tính năng
 
+- **Format linh hoạt**: Hỗ trợ 3v3, 4v4, 5v5 với vị trí phù hợp
 - **Validation đầu vào**: Kiểm tra số người chẵn, tên không trùng lặp
 - **Random công bằng**: Sử dụng thuật toán Fisher-Yates shuffle
+- **170 tướng LoL**: Danh sách đầy đủ và cập nhật 2025
 - **Responsive design**: Tương thích mọi thiết bị
 - **Animation mượt mà**: Hiệu ứng chuyển đổi đẹp mắt
-- **Theme LoL authentic**: Màu sắc và styling giống game thực
+- **Giao diện đơn giản**: Tập trung vào chức năng, dễ sử dụng
 
 ## 🔧 Tùy chỉnh
 

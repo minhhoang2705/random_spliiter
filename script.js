@@ -74,13 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function splitIntoTeams(players) {
         const shuffledPlayers = shuffleArray(players);
         const teamSize = players.length / 2;
+        const playerCount = players.length;
         
         const team1Players = shuffledPlayers.slice(0, teamSize);
         const team2Players = shuffledPlayers.slice(teamSize);
         
-        // Assign roles cho mỗi team
-        const team1WithRoles = assignRoles(team1Players);
-        const team2WithRoles = assignRoles(team2Players);
+        // Assign roles cho mỗi team dựa trên số lượng người chơi
+        const team1WithRoles = assignRoles(team1Players, playerCount);
+        const team2WithRoles = assignRoles(team2Players, playerCount);
         
         // Random champions cho mỗi team
         const team1Champions = getRandomChampions(10);
@@ -99,16 +100,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Assign roles ngẫu nhiên cho một team
-    function assignRoles(players) {
-        const shuffledRoles = shuffleArray(roles);
+    function assignRoles(players, playerCount) {
+        let availableRoles;
+        
+        // Xác định roles dựa trên số lượng người chơi
+        if (playerCount === 6) {
+            // 6 người: mỗi team 3 người, bỏ jungle
+            availableRoles = ["Top", "Mid", "ADC"];
+        } else if (playerCount === 8) {
+            // 8 người: mỗi team 4 người, bỏ support
+            availableRoles = ["Top", "Jungle", "Mid", "ADC"];
+        } else {
+            // 10 người: mỗi team 5 người, đủ tất cả roles
+            availableRoles = ["Top", "Jungle", "Mid", "ADC", "Support"];
+        }
+        
+        const shuffledRoles = shuffleArray(availableRoles);
         return players.map((player, index) => ({
             name: player,
-            role: shuffledRoles[index % roles.length]
+            role: shuffledRoles[index % shuffledRoles.length]
         }));
     }
 
     // Hiển thị kết quả
     function displayResults(teams) {
+        // Hiển thị thông tin format game
+        const playerCount = parseInt(playerCountSelect.value);
+        let formatInfo = '';
+        if (playerCount === 6) {
+            formatInfo = '🎮 Format: 3v3 (không có Jungle)';
+        } else if (playerCount === 8) {
+            formatInfo = '🎮 Format: 4v4 (không có Support)';
+        } else {
+            formatInfo = '🎮 Format: 5v5 (đầy đủ vị trí)';
+        }
+        
+        const resultsH2 = resultsSection.querySelector('h2');
+        resultsH2.innerHTML = `Kết quả chia team<br><small style="font-size: 0.8em; color: #c9aa71;">${formatInfo}</small>`;
+        
         // Hiển thị team 1
         const team1PlayersDiv = document.getElementById('team1Players');
         team1PlayersDiv.innerHTML = '';
